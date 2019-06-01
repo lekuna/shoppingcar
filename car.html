@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css2.css"/>
+	</head>
+	<body>
+		
+		<div id="app">
+			<div class="warp table">
+				
+				<div class="tr">
+					
+					<div class="td product-info">
+						<div class="img" >
+							<img src="img/a.jpg"/>
+						</div>
+						<div class="product-name">
+							{{products[0].productName}}
+						</div>
+					</div>
+					
+				
+					<div class="td min-width">   </div>
+					
+					<div class="td">
+						<div class="unit-price">
+							{{formatUnitPrice0}}
+						</div>
+					</div>	
+					
+					<div class="td">
+						<div class="price-input">
+							<input v-model="products[0].num"  @input="handlerNum(0)"/>
+						</div>
+					</div>
+					
+					<div class="td min-width">
+						<div class="middle">
+							<div class="price">
+								{{formatPrice0}}
+							</div>
+							
+							<div class="weight">
+								{{formatWeight0}}
+							</div>
+						</div>
+					</div>
+					
+					<div class="td">
+						<div class="des">
+							<button>移入收藏</button>
+							<button>删除</button>
+						</div>
+					</div>
+					
+				</div>
+				
+				
+				
+						<div class="tr">
+					
+					<div class="td product-info">
+						<div class="img" >
+							<img src="img/a.jpg"/>
+						</div>
+						<div class="product-name">
+							{{products[0].productName}}
+						</div>
+					</div>
+					
+				
+					<div class="td min-width">   </div>
+					
+					<div class="td">
+						<div class="unit-price">
+							{{formatUnitPrice0}}
+						</div>
+					</div>	
+					
+					<div class="td">
+						<div class="price-input">
+							<input v-model="products[0].num"  @input="handlerNum(0)"/>
+						</div>
+					</div>
+					
+					<div class="td min-width">
+						<div class="middle">
+							<div class="price">
+								{{formatPrice0}}
+							</div>
+							
+							<div class="weight">
+								{{formatWeight0}}
+							</div>
+						</div>
+					</div>
+					
+					<div class="td">
+						<div class="des">
+							<button>移入收藏</button>
+							<button>删除</button>
+						</div>
+					</div>
+					
+				</div>
+				
+				
+			</div>
+			<div class="wrap bg-e5 balance-wrap">
+				<div class="product-total">
+					<div class="totlePrice">
+						总价(不含运费)：<span class="totlePrice-span">{{totlePrice}}</span>
+					</div>
+					
+					<div class="settlement">
+						<a href="" @click="handleSettlement">结算</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			var datas=[
+			{
+			img:"",
+			productName:"清风 抽纸 原木纯品金装3层120抽*6包软包抽取面纸巾",
+			unitPrice:"1580",
+			num:"0",
+			weight:"0.937",
+			},{
+			img:"",
+			productName:"清风 抽纸 原木纯品金装3层120抽*6包软包抽取面纸巾",
+			unitPrice:"1490",
+			num:"0",
+			weight:"0.856",
+			}
+			
+			];
+			
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					products:datas,
+				},
+				methods:{
+					handlerNum:function(index){
+//						this.products[index].num=this.products[index].num;
+						if(isNaN(this.products[index].num)||this.products[index].num<0){
+							this.products[index].num=0;
+						}
+						if(this.products[index].num>200){
+							this.products[index].num=200;
+						}
+					},
+					
+					handleSettlement:function(){
+						alert("共计消费："+this.totlePrice+"元");
+						alert("传递到后台金额："+(this.totlePrice*100)+"单位分为");
+					}
+				},
+				
+				computed:{
+					formaUnitPrice0:function(){
+						let unprice=this.products[0].unitPrice;
+						let format=(unprice/100).toFixed(2);
+						return "$"+format;
+					},
+					
+					formatPrice0:function(){
+						let price=this.products[0].unitPrice*this.products[0].num;
+						let format=(price/100).toFixed(2);
+						return "$"+format;
+					},
+					formatWeight0:function(){
+						let weight=this.products[0].weight*this.products[0].num;
+						return weight.toFixed(2)+"kg"
+					},
+					
+					totlePrice:function(){
+						let sum=0;
+						for(let i=0;i<this.products.length;i++){
+							sum+=this.products[i].unitPrice*this.products[i].num;
+							
+						}
+						sum=(sum/100).toFixed(2);
+						return sum;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

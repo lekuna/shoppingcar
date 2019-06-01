@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css1.css"/>
+	</head>
+	<body>
+		
+		<div id="app">
+			<ul class="kb-focus-list">
+				<li class="kb-focus-item">
+					
+					<div class="focus-item-main">
+						<div class="cover-image">
+							<img src="img/a.jpg" width="210" height="140"/><i class="cover-flag">{{news[0].newsCategory}}</i>
+						</div>
+						
+						<div class="focus-post">
+							<h3 class="focus-title">{{news[0].newsTitle}}</h3>
+							
+							<div class="tag-section">
+								<ul class="tag-list">
+									<li class="tag-item">
+										<a class="tag">{{news[0].newsTag[0]}}</a>
+									</li>
+									<li class="tag-item">
+										<a class="tag">{{news[0].newsTag[1]}}</a>
+									</li>
+									<li class="tag-item">
+										<a class="tag">{{news[0].newsTag[2]}}</a>
+									</li>
+								</ul>
+								<span class="addtime">{{news[0].newsData}}</span>
+							</div>
+							
+							<a href="" target="_blank" class="focus-content">{{news[0].newsDescript}}</a>
+							
+						</div>
+					</div>
+					
+					<div class="clearfix">
+						
+					</div>
+					
+					<div class="focus-item-ext">
+						<span class="related-mem mem-3"><em>相关商家：</em>
+							<a href="" target="_blank " :title="news[0].relatedMen[0]">{{news[0].relatedMen[0]}}</a>
+						<a href="" target="_blank " :title="news[0].relatedMen[1]">{{news[0].relatedMen[1]}}</a>
+						<a href="" target="_blank " :title="news[0].relatedMen[2]">{{news[0].relatedMen[2]}}</a>
+						</span>
+						
+						<span class="onlook-section">
+							<a href="" target="_blank" class="onlook-btn" @click="alertNewsMessage(news[0].newsTitle)">马上围观</a>
+							<span class="onlook-num">{{news[0].lookNum}}</span>
+						</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			var news=[
+			{
+						img:" ",
+						newsCategory:"曝点聚焦",
+						newsTitle:"全国流量均价11.26元/GB 上半年已降价50%",
+						newsTag:["中国联通","中国电信","中国移动"],
+						newsDate:"2018-08-22",
+						newsDescript:"三家运营商中，联通流量单价最低，为6.1元/GB，移动最高，为15.4/GB",
+						relatedMen:["中国联通","中国电信股份有限公司","中国移动"],
+						lookNum:"1.2万次围观"
+					}
+			]
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					news:[
+		
+					]
+				},
+				mounted:function(){
+					this.news=news;
+				},
+				methods:{
+					alertNewsMessage:function(msg){
+						alert("您点击了:"+msg)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

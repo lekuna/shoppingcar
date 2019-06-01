@@ -1,0 +1,177 @@
+
+#app{
+	width: 820px;
+	float: left;
+	margin: 0 auto;
+	font-size: 13px;
+}
+.kb-focus-list{
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+.kb-focus-list .kb-focus-item{
+	position: relative;
+	padding: 10px 0 15px 0;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #f1f1f1;
+}
+.clearfix{
+	clear: both;
+}
+.kb-focus-list li{
+	list-style-image: none;
+	list-style-type: none;
+	margin-left: 0;
+	
+}
+.kb-focus-list .kb-focus-item .cover-image{
+	float: left;
+}
+.cover-image{
+	width: 250px;
+	height: 166px;
+	position: relative;
+}
+.cover-image .cover-flag{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 70px;
+	height: 28px;
+	font-size: 12px;
+	color: #fff;
+	background: rgba(0,0,0,0.3);
+	z-index: 2;
+	font-style: normal;
+	text-align: center;
+	line-height: 28px;
+	border: 1px solid #fff;
+	border-radius: 20px;
+}
+.kb-focus-list .kb-focus-item .focus-post{
+	float: right;
+	width: 550px;
+}
+.focus-title{
+	color: #333;
+	font-size: 18px;
+	line-height: 1.4;
+	font-weight: 600;
+	margin: 0;
+}
+.kb-focus-list .kb-focus-item .tag-section{
+	margin-top: 5px;
+	height: 40px;
+	line-height: 40px;
+}
+.tag-section{
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	overflow: hidden;
+}
+.tag-section .tag-list{
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	float: left;
+	width: 440px;
+}
+.tag-section .tag-list .tag-item{
+	float: left;
+ margin-right: 10px;
+}
+.tag-section .tag-list li{
+	list-style-image: none;
+	list-style-type: none;
+	margin-left: 0;
+	
+}
+.tag{
+	display: inline-block;
+	border: 1px solid #eee;
+	border-radius:15px ;
+	height: 22px;
+	line-height: 22px;
+	padding: 1px 12px;
+	color: #333;
+	font-size: 14px;
+}
+.kb-focus-list .kb-focus-item .tag-section .addtime{
+	float: right;
+	color: #999;
+	font-size: 13px;
+}
+.kb-focus-list .kb-focus-item .focus-content{
+	display: block;
+	color: #666;
+	padding-left: 10px;
+	left: -9px;
+	margin-top: 10px;
+	line-height: 1.8;
+	position: relative;
+}
+.kb-focus-list .kb-focus-item .focus-item-ext{
+	margin-top: 15px;
+	height: 40px;
+	line-height: 40px;
+}
+.related-mem{
+	width: 510px;
+	height: 40px;
+	font-size: 13px;
+	color: #aaa;
+	line-height: 40px;
+	float: left;
+	overflow: hidden;
+	
+}
+.related-mem em{
+	margin-right: 5px;
+	font-style: normal;
+}
+.related-mem em, .related-mem a{
+	display: inline-block;
+	vertical-align: middle;
+}
+.related-mem.mem-3 a{
+	max-width: 130px;
+}
+.related-mem a{
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #333;
+	font-size: 13px;
+	margin-right: 10px;
+}
+.onlook-section{
+	float: right;
+	text-align: right;
+	color: #333;
+	line-height: 40px;
+	margin-top: 5px;
+}
+.onlook-section .onlook-btn{
+	float: right;
+}
+.onlook-btn{
+	display: inline-block;
+	padding: 0 14px;
+	height: 26px;
+	line-height: 26px;
+	font-size: 12px;
+	border: 1px solid #999;
+	background-color: #eee;
+	color: #333;
+	margin-top: 7px;
+	margin-right: 138px;
+}
+.onlook-section .onlook-num{
+	float: right;
+	margin-right: 10px;
+	color: #333;
+}
